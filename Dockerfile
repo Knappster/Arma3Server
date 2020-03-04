@@ -1,6 +1,6 @@
 FROM debian:buster-slim
 
-LABEL maintainer="Brett - github.com/synixebrett"
+LABEL maintainer="Carl - github.com/knappster"
 
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends --no-install-suggests \
