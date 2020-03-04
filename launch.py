@@ -44,19 +44,11 @@ if clients != 0:
         for matchNum, match in enumerate(matches, start=1):
             config_values[match.group(1).lower()] = match.group(2)
 
-        if not "headlessclients[]" in config_values:
-            config_values["headlessclients[]"] = "{\"127.0.0.1\"}"
-        if not "localclient[]" in config_values:
-            config_values["localclient[]"] = "{\"127.0.0.1\"}"
+        launch += " -config=\"/arma3/configs/{}\"".format(CONFIG_FILE)
 
-        with open("/tmp/arma3.cfg", "w") as tmp_config:
-            for key, value in config_values.items():
-                tmp_config.write("{} = {};\n".format(key, value))
-        launch += " -config=\"/tmp/arma3.cfg\""
-
-    
     client_launch = launch
     client_launch += " -client -connect=127.0.0.1"
+
     if "password" in config_values:
         client_launch += " -password={}".format(config_values["password"])
 
@@ -72,5 +64,5 @@ launch += " -name=\"{}\" -profiles=\"/arma3/configs/profiles\"".format(os.enviro
 if os.path.exists("servermods"):
     launch += " -serverMod={}".format(mods("servermods"))
 
-print("LAUNCHING ARMA SERVER WITH",launch, flush=True)
+print("LAUNCHING ARMA SERVER WITH", launch, flush=True)
 os.system(launch)
