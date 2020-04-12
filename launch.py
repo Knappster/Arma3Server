@@ -11,7 +11,7 @@ if not os.path.exists(KEYS) or not os.path.isdir(KEYS):
         os.remove(KEYS)
     os.makedirs(KEYS)
 
-subprocess.call(["/steamcmd/steamcmd.sh", "+login", os.environ["STEAM_USER"], os.environ["STEAM_PASSWORD"], "+force_install_dir", "/arma3", "+app_update", "233780", "-beta", "profiling", "-betapassword", "CautionSpecialProfilingAndTestingBranchArma3", "validate", "+quit"])
+subprocess.call(["/steamcmd/steamcmd.sh", "+login", os.environ["STEAM_USER"], os.environ["STEAM_PASSWORD"], "+force_install_dir", "/arma3", "+app_update", "233780", "\"-beta profiling -betapassword CautionSpecialProfilingAndTestingBranchArma3\"", "validate", "+quit"])
 
 def mods(d):
     launch = "\""
@@ -27,7 +27,7 @@ def mods(d):
             print("Missing keys:", keysdir)
     return launch+"\""
 
-launch = "./arma3server -mod={} -world={}".format(mods('mods'), os.environ["ARMA_WORLD"])
+launch = "./arma3server -noLogs -mod={} -world={}".format(mods('mods'), os.environ["ARMA_WORLD"])
 
 clients = int(os.environ["HEADLESS_CLIENTS"])
 
