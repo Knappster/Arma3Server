@@ -11,7 +11,8 @@ RUN apt-get install -y --no-install-recommends --no-install-suggests \
         wget \
         ca-certificates \
         libtbb2 \
-        libtbb2:i386
+        libtbb2:i386 \
+        zlib1g:i386
 RUN apt-get remove --purge -y
 RUN apt-get clean autoclean
 RUN apt-get autoremove -y
