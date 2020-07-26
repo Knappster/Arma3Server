@@ -2,8 +2,8 @@ FROM debian:buster-slim
 
 LABEL maintainer="Carl - github.com/knappster"
 
-RUN apt-get update
 RUN dpkg --add-architecture i386
+RUN apt-get update
 RUN apt-get install -y --no-install-recommends --no-install-suggests \
         python3 \
         lib32stdc++6 \
