@@ -10,6 +10,7 @@ RUN apt-get install -y --no-install-recommends --no-install-suggests \
         lib32gcc1 \
         wget \
         ca-certificates \
+        libsdl2-2.0-0:i386 \
         libtbb2 \
         libtbb2:i386 \
         zlib1g:i386
