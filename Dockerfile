@@ -32,6 +32,10 @@ EXPOSE 2302/udp
 EXPOSE 2303/udp
 EXPOSE 2304/udp
 EXPOSE 2305/udp
+EXPOSE 2306/udp
+EXPOSE 2344/tcp
+EXPOSE 2344/udp
+EXPOSE 2345/tcp
 
 ADD launch.py /launch.py
 
