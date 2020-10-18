@@ -1,22 +1,18 @@
 version: '3.7'
 services:
     arma3server:
-        build:
-            context: .
-            dockerfile: Dockerfile
-        image: knappster/arma3server
+        image: knappster/arma-3-server:workshop-support
         container_name: arma3server
         restart: unless-stopped
         ports:
-            - "2301-2306/udp"
-            - "2344"
-            - "2344/udp"
-            - "2345"
+            - "2301-2306:2301-2306/udp"
+            - "2344:2344"
+            - "2344:2344/udp"
+            - "2345:2345"
         volumes:
             - ./arma3/configs:/home/steam/arma3/configs
             - ./server-config.json:/home/steam/server-config.json
             - steam_data:/home/steam
-            - ./launch.php:/home/steam/launch.php
 
 volumes:
     steam_data:
