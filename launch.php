@@ -32,7 +32,7 @@ if ($config->steam_user && $config->steam_pass) {
 		." +quit";
 
 	echo "Installing Arma3 Server \n";
-	//passthru($steamcmd);
+	passthru($steamcmd);
 	// TODO: Handle failed connections.
 } else {
 	echo "Steam username or password not set! \n";
@@ -54,7 +54,7 @@ if (!empty($config->workshop->mods)) {
 			." validate"
 			." +quit";
 
-		//passthru($steamcmd, $return_code);
+		passthru($steamcmd, $return_code);
 		// TODO: Somehow check the download failed.
 
 		$mod_dir = "$home_dir/Steam/steamapps/workshop/content/107410/$mod_id";
@@ -96,7 +96,7 @@ if (!empty($config->workshop->mp_missions)) {
 			." validate"
 			." +quit";
 
-		//passthru($steamcmd, $return_code);
+		passthru($steamcmd, $return_code);
 		// TODO: Somehow check the download failed.
 		$mod_dir = "$home_dir/Steam/steamapps/workshop/content/107410/$mission_id";
 
