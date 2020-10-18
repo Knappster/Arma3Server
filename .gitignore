@@ -1,0 +1,3 @@
+/arma3/configs/*
+!/arma3/configs/main.cfg.example
+server-config.json

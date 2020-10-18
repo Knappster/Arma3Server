@@ -1,0 +1,25 @@
+{
+	"cfg": "main.cfg",
+	"profile": "main",
+	"world": "empty",
+	"headless_clients": 0,
+	"steam_user": "",
+	"steam_pass": "",
+	"workshop": {
+		"mods": {
+			"ace3_no_medical_or_reload": "2026319234",
+			"ace_compat_rhs_russian_federation": "773131200",
+			"ace_compat_rhs_united_states": "773125288",
+			"ace_compat_rhs_gref": "884966711",
+			"cba_a3": "450814997",
+			"enhanced_movement": "333310405",
+			"rhsafrf": "843425103",
+			"rhsgref": "843593391",
+			"rhsusaf": "843577117",
+			"dui_squad_radar": "1638341685"
+		},
+		"mp_missions": {
+			"antistasi.altis": "1832638103"
+		}
+	}
+}

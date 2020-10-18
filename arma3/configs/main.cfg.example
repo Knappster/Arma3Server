@@ -1,0 +1,68 @@
+//
+// More information at: http://community.bistudio.com/wiki/server.cfg
+//
+// GLOBAL SETTINGS
+hostname = "Knappster's Antistasi Server";
+password = "";
+passwordAdmin = "";
+serverCommandPassword = "";
+admins[] = {"0000000000000"};
+
+headlessClients[]={"127.0.0.1"};
+localClient[]={"127.0.0.1"};
+
+motd[] = {
+    "","",
+    "Welcome to Knappster's Antistasi Server", "","",
+    "Behave and have fun!"
+};
+motdInterval = 10;
+
+maxPlayers = 50;
+kickDuplicate = 1;
+
+voteMissionPlayers = 9999;
+voteThreshold = 1;
+allowedVoteCmds[] =
+{
+    { "kick", true, true, 0.55, 0.30 }
+};
+allowedVotedAdminCmds[] = {};
+
+disableVoN = 0;
+vonCodecQuality = 30;
+vonCodec = 1;
+
+autoSelectMission = true;
+persistent = 0;
+missionWhitelist[] = {antistasi.altis}; // add the name excludin the extension (.pbo)
+
+class Missions
+{
+    class Antistasi
+    {
+        template = "antistasi.altis";
+        difficulty = "regular";
+        class Params {
+            gameMode = 3;
+            tkPunish = 0;
+            allowPvP = 0;
+            personalGarageMax = 0;
+            allowFT = 0;
+            unlockedUnlimitedAmmo = 1;
+            allowGuidedLaunchers = 1;
+            allowUnlockedExplosives = 1;
+        };
+    };
+};
+
+BattlEye=1;
+verifySignatures = 2;
+allowedFilePatching = 0;
+allowedLoadFileExtensions[] = {"hpp","sqs","sqf","fsm","cpp","paa","txt","xml","inc","ext","sqm","ods","fxy","lip","csv","kb","bik","bikb","html","htm","biedi"};
+allowedPreprocessFileExtensions[] = {"hpp","sqs","sqf","fsm","cpp","paa","txt","xml","inc","ext","sqm","ods","fxy","lip","csv","kb","bik","bikb","html","htm","biedi"};
+allowedHTMLLoadExtensions[] = {"htm","html","xml","txt"};
+
+onUnsignedData = "kick (_this select 0)";
+onHackedData = "kick (_this select 0)";
+onDifferentData = "";
