@@ -46,7 +46,7 @@ if (!empty($config->workshop->mods)) {
 	}
 
 	foreach ($config->workshop->mods as $mod_name => $mod_id) {
-		echo "Downloading workshop item: $mod_name \n";
+		echo "\nDownloading workshop item: $mod_name \n";
 
 		$steamcmd = "$steamcmd_dir/steamcmd.sh"
 			." +login $config->steam_user $config->steam_pass"
@@ -88,7 +88,7 @@ if (!empty($config->workshop->mp_missions)) {
 	}
 
 	foreach ($config->workshop->mp_missions as $mission_name => $mission_id) {
-		echo "Downloading workshop item: $mission_name \n";
+		echo "\nDownloading workshop item: $mission_name \n";
 
 		$steamcmd = "$steamcmd_dir/steamcmd.sh"
 			." +login $config->steam_user $config->steam_pass"
@@ -141,7 +141,8 @@ $cmd = "$arma3_dir/arma3server_x64"
 	.(!empty($config->world)? " -world=$config->world" : '')
 	.(!empty($config->profile)? " -name=$config->profile" : '')
 	." -profiles=\"$arma3_dir/configs/profiles\""
-	.(!empty($mod_names_arr)? " -mod=\"".implode(';', $mod_names_arr)."\"" : '');
+	.(!empty($mod_names_arr)? " -mod=\"".implode(';', $mod_names_arr)."\"" : '')
+	.(!empty($config->additional_params)? ' '.$config->additional_params : '');
 
 echo "Launching server: ".$cmd."\n";
 exec("cd $arma3_dir && $cmd");

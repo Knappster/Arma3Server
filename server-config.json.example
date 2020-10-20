@@ -5,6 +5,7 @@
 	"headless_clients": 0,
 	"steam_user": "",
 	"steam_pass": "",
+	"additional_params": "-noLogs -limitFPS=120",
 	"workshop": {
 		"mods": {
 			"ace3_no_medical_or_reload": "2026319234",
