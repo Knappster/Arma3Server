@@ -45,6 +45,9 @@ if (!empty($config->workshop->mods)) {
         mkdir($arma3_dir . '/mods');
     }
 
+    // Remove old keys.
+    shell_exec("rm -f $arma3_dir/keys/*");
+
     foreach ($config->workshop->mods as $mod_name => $mod_id) {
         echo "\nDownloading workshop item: $mod_name \n";
 
